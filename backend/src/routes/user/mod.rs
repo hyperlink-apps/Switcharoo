@@ -9,6 +9,7 @@ pub fn get_scope() -> actix_web::Scope {
     web::scope("/user").service(
         web::scope("/auth")
             .service(create::create_user)
-            .service(login::log_user_in),
+            .service(login::log_user_in)
+            .service(verify::verify),
     )
 }
